@@ -77,7 +77,27 @@ suite in-worker. The worker's `MISTRAL_API_KEY` (service account) is used for th
 
 ## Development
 
+One-liner — downloads and runs `setup.sh`, which checks prerequisites, creates `.venv`, installs the project with
+dev dependencies and runs the test suite (safe to re-run, works from any directory):
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/itsfja/Mistral-issues-solver-/main/setup.sh | bash
 ```
+
+(Until PR #1 is merged, point at the branch instead:
+`https://raw.githubusercontent.com/itsfja/Mistral-issues-solver-/vibe/mistral-issues-solver-56c00c/setup.sh`)
+
+Or download first, then run:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/itsfja/Mistral-issues-solver-/main/setup.sh -o setup.sh
+bash setup.sh
+```
+
+Manual equivalent:
+
+```bash
+python3 -m venv .venv && source .venv/bin/activate
 pip install -e .[dev]
 python -m pytest -q
 ```
